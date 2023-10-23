@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <H1>CALCULITE</H1>
+    Upgrade Latihan 6 (yang hanya operasi tambah) dengan operasi kurang, kali, bagi, dan modulus. Tidak ada video tutorial, silahkan kalian berkreasi dengan coding! Happy Challenge!
+
+    <form class="kalkulator" name="calc">
+        <input id="input1" placeholder="Masukan Angka">
+        
+        <label class="operasi" onclick="hitung('*')">*</label>
+        <label class="operasi" onclick="hitung('/')">/</label>
+        <label class="operasi" onclick="hitung('+')">+</label>
+        <label class="operasi" onclick="hitung('-')">-</label>
+        <label class="operasi" onclick="hitung('%')">%</label>
+
+        <input id="input2" placeholder="Masukan Angka">
+
+        <label id="hasil"></label>
+
+        
+    </form>
+    
+    <script>
+        function hitung(operasi) {
+            let input1 = document.getElementById('input1').value ;
+            let input2 = document.getElementById('input2').value ;
+            input1 = parseInt(input1);
+            input2 = parseInt(input2);
+            let hasil ;
+        
+
+            if (isNaN(input1) || isNaN(input2)) {
+                hasil = 'INVALID' ;
+            } else  {
+                if (operasi === '*') {
+                    hasil = input1 * input2 ;
+                } else if (operasi === '/') {
+                    hasil = input1 / input2 ;
+                } else if (operasi === '+') {
+                    hasil = input1 + input2 ;
+                } else if (operasi === '-') {
+                    hasil = input1 - input2 ;
+                } else if (operasi === '%') {
+                    hasil = input1 % input2 ;
+                }
+            }
+            
+            document.getElementById('hasil').innerHTML = hasil;
+            console.log(typeof input1 , typeof input2, typeof hasil);
+        }
+
+        
+    </script>
+    
+    
+</body>
+</html>
